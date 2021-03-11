@@ -6,23 +6,17 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.33",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
-    "typescript": "^4.2.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "set PORT=9000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "service": "nodemon bin/www/www.js",
-    "dev": "concurrently \"npm run start\" \"npm run service\""
+    "service": "nodemon bin/www"
   },
   "eslintConfig": {
     "extends": [
@@ -43,14 +37,10 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
-    "jade": "^1.11.0",
-    "less": "^4.1.1",
-    "less-loader": "^8.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   }
