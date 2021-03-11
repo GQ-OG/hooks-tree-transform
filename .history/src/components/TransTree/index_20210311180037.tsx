@@ -8,6 +8,7 @@ import {
     Button
 } from 'antd'
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
+import styles from './index.less'
 
 const { Search } = Input
 
