@@ -1,0 +1,18 @@
+import _ from "lodash"
+
+const formartLeftTrees = (arr: any) => {
+
+}
+
+export const getDisabled = (trees1: any, trees2: any) => {
+// 通过trees1与trees2的checked作比较
+}
+
+export const moveData = (checked: any, Trees: any, type: any) => {
+
+}
+
+export const getRightTree = (checked: any, leftTreesData: any) => {
+    const localTrees = _.cloneDeep(leftTreesData)
+    
+}
