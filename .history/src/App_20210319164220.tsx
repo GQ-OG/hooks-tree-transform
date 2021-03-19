@@ -4,7 +4,7 @@ import TransTree from './components/TransTree'
 import React, { useEffect, useState } from 'react'
 import 'antd/dist/antd.css';
 import zhCN from 'antd/lib/locale/zh_CN';
-import Home from './example/index'
+import Home from '../example/index'
 
 
 function App() {

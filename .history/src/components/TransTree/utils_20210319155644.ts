@@ -62,22 +62,13 @@ export const getSelectTree = (data: any) => {
 }
 
 export const getRightTree = (data: any, keys: any) => {
-    let newData = data?.map((item: any) => {
+    return data?.map((item: any) => {
         const flag = keys?.includes(item?.key)
-        if(flag) {
-            return {}
-        }
-        else {
-            return ({
-                ...item,
-                children: getRightTree(item?.children, keys)
-            })
-        }
-    })?.filter((item: any) => !isEmpty(item))
-    return newData
-}
+        return flag ? ({
 
-/**
- * @tips
- * 右侧丢失
-*/
+        }) : ({
+            ...item,
+            children: getRightTree(item?.children)
+        })
+    })
+}

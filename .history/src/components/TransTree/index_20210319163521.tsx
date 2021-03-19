@@ -114,6 +114,9 @@ const TransTree = (props: propsState) => {
                             // keys: Array.from(new Set([...leftTreesData?.keys, ...r?.halfCheckedKeys?.concat(v)])),
                         }
                         setLeftTreesData(handleChangeLeft(afterLeftTrees, dataSource))
+                        let oldV1 = leftTreesData
+                        let v1 = handleChangeLeft(afterLeftTrees, dataSource)
+                        debugger
                     }}
                     />
                 </Col>

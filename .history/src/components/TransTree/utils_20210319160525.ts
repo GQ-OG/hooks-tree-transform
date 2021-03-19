@@ -62,7 +62,7 @@ export const getSelectTree = (data: any) => {
 }
 
 export const getRightTree = (data: any, keys: any) => {
-    let newData = data?.map((item: any) => {
+    const newData = data?.map((item: any) => {
         const flag = keys?.includes(item?.key)
         if(flag) {
             return {}
@@ -73,11 +73,9 @@ export const getRightTree = (data: any, keys: any) => {
                 children: getRightTree(item?.children, keys)
             })
         }
-    })?.filter((item: any) => !isEmpty(item))
+    })
     return newData
+    /**
+     * @tips 最深层的从右往左移再右移多出选择
+    */
 }
-
-/**
- * @tips
- * 右侧丢失
-*/

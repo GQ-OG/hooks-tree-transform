@@ -76,8 +76,3 @@ export const getRightTree = (data: any, keys: any) => {
     })?.filter((item: any) => !isEmpty(item))
     return newData
 }
-
-/**
- * @tips
- * 右侧丢失
-*/

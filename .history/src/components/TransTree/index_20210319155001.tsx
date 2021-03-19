@@ -11,7 +11,7 @@ import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 import styles from './index.module.scss'
 import 'antd/dist/antd.css';
 import _ from 'lodash'
-import { getMountedTree, handleChangeLeft, handleChangeRight, formartDisableTrees, getRightTree } from './utils'
+import { getMountedTree, handleChangeLeft, handleChangeRight, formartDisableTrees } from './utils'
 
 const { Search } = Input
 
@@ -84,11 +84,11 @@ const TransTree = (props: propsState) => {
         left: false,
         right: false
     })
+    // useEffect(() => {
+    //     console.log(leftTreesData, "leftTreesData")
+    // }, [leftTreesData])
     useEffect(() => {
-        console.log(leftTreesData, "leftTreesData>>>>>>>>>>>>>>>>>>>>>>>>>")
-    }, [leftTreesData])
-    useEffect(() => {
-        console.log(rightTreesData, "rightTreesData<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        console.log(rightTreesData, "rightTreesData")
     }, [rightTreesData])
     
     useEffect(() => {
@@ -111,7 +111,7 @@ const TransTree = (props: propsState) => {
                             ...leftTreesData,
                             checked: v,
                             keys: Array.from(new Set([...leftTreesData?.keys, ...r?.halfCheckedKeys?.concat(v)])),
-                            // keys: Array.from(new Set([...leftTreesData?.keys, ...r?.halfCheckedKeys?.concat(v)])),
+                            // selectDataSource: [],
                         }
                         setLeftTreesData(handleChangeLeft(afterLeftTrees, dataSource))
                     }}
@@ -145,16 +145,15 @@ const TransTree = (props: propsState) => {
                             let keys = rightTreesData?.leftKeys?.filter((item: any) => !(rightTreesData?.keys?.includes(item)))
                             setLeftTreesData({
                                 ...leftTreesData,
-                                dataSource: formartDisableTrees(dataSource, keys),
-                                keys: leftTreesData?.keys?.filter((item: any) => !rightTreesData?.checked?.includes(item))
+                                dataSource: formartDisableTrees(dataSource, keys)
                             })
                             setStatus_right(true)
                             setRightTreesData({
                                 ...rightTreesData,
                                 checked: [],
-                                leftKeys: [],
-                                keys: [],
-                                dataSource: getRightTree(rightTreesData?.dataSource, rightTreesData?.checked)
+                                leftKes: [],
+                                keys: []
+                                // dataSource: 
                             })
                         }}
                         icon={<LeftOutlined />} />

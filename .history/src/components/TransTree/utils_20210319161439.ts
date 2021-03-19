@@ -73,11 +73,12 @@ export const getRightTree = (data: any, keys: any) => {
                 children: getRightTree(item?.children, keys)
             })
         }
-    })?.filter((item: any) => !isEmpty(item))
+    })
+    newData = newData?.filter((item: any) => !isEmpty(item) )
+    // for(let i in newData) {
+    //     if(isEmpty(i)) {
+    //         delete newData[i]
+    //     }
+    // }
     return newData
 }
-
-/**
- * @tips
- * 右侧丢失
-*/

@@ -110,8 +110,9 @@ const TransTree = (props: propsState) => {
                         const afterLeftTrees = {
                             ...leftTreesData,
                             checked: v,
-                            keys: Array.from(new Set([...leftTreesData?.keys, ...r?.halfCheckedKeys?.concat(v)])),
+                            keys: Array.from(new Set([...v, ...r?.halfCheckedKeys?.concat(v)])),
                             // keys: Array.from(new Set([...leftTreesData?.keys, ...r?.halfCheckedKeys?.concat(v)])),
+                            // selectDataSource: [],
                         }
                         setLeftTreesData(handleChangeLeft(afterLeftTrees, dataSource))
                     }}
@@ -145,8 +146,7 @@ const TransTree = (props: propsState) => {
                             let keys = rightTreesData?.leftKeys?.filter((item: any) => !(rightTreesData?.keys?.includes(item)))
                             setLeftTreesData({
                                 ...leftTreesData,
-                                dataSource: formartDisableTrees(dataSource, keys),
-                                keys: leftTreesData?.keys?.filter((item: any) => !rightTreesData?.checked?.includes(item))
+                                dataSource: formartDisableTrees(dataSource, keys)
                             })
                             setStatus_right(true)
                             setRightTreesData({

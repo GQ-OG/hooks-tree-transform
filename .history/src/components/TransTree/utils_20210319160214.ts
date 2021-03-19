@@ -62,10 +62,11 @@ export const getSelectTree = (data: any) => {
 }
 
 export const getRightTree = (data: any, keys: any) => {
-    let newData = data?.map((item: any) => {
+    const newData = data?.map((item: any) => {
         const flag = keys?.includes(item?.key)
         if(flag) {
-            return {}
+            // delete item
+            throw new Error("")
         }
         else {
             return ({
@@ -73,11 +74,6 @@ export const getRightTree = (data: any, keys: any) => {
                 children: getRightTree(item?.children, keys)
             })
         }
-    })?.filter((item: any) => !isEmpty(item))
+    })
     return newData
 }
-
-/**
- * @tips
- * 右侧丢失
-*/
